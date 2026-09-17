@@ -12,7 +12,13 @@ From the app directory:
 php tests/run.php
 ```
 
-The master runner currently executes the deterministic parser/rate-limit tests, the configuration and queue tests, the file tag update test, and the database integration/validation tests.
+The master runner executes the deterministic parser/rate-limit tests, the configuration and queue tests, the file tag update test, and the database integration/validation tests.
+
+You can also select specific tests through the master runner:
+
+```bash
+php tests/run.php filename_parser_test.php queue_test.php
+```
 
 The live e621 API test is intentionally not part of the master run because it performs an external API request.
 
