@@ -23,6 +23,10 @@ Nextcloud-Apps/
 
 Each app directory contains the complete Nextcloud app, including its `appinfo`, PHP classes, frontend assets, templates, and any app-specific documentation.
 
+## Release and code review
+
+Code in this repository is reviewed by the repository maintainer before publication or release. Particular attention is given to reviewing the code itself before it is made publicly available.
+
 ## License
 
 Unless a file or app states otherwise, the contents of this repository are licensed under the **GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)**.
@@ -31,7 +35,7 @@ See the [LICENSE](./LICENSE) file for the full license text.
 
 ## AI assistance
 
-Parts of this repository, including code and documentation, have been created or refined with the assistance of AI tools. Human review, testing, and final decisions remain with the repository maintainer.
+Parts of this repository, including code and documentation, have been created or refined with the assistance of AI tools. AI assistance is used as a development aid only. Before publication or release, the code is reviewed by the repository maintainer, with particular focus on the code and its suitability for publication. Human decisions remain with the repository maintainer.
 
 ---
 
