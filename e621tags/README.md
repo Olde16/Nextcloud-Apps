@@ -48,6 +48,14 @@ The app provides an administration page for enabling or disabling e621 and e6AI 
 
 Processed files receive the marker tag `Tagged by e621TagSystem`.
 
+## Disclaimer
+
+This app is provided as open-source software and is used at your own risk. I do not provide any guarantee that it will work correctly in every environment or for every use case.
+
+I am not responsible for data loss, data corruption, service interruptions, security issues, or other damages resulting from the use, modification, configuration, or misuse of this app, to the extent permitted by applicable law.
+
+Please review changes, test new releases in your environment, and keep appropriate backups before using the app in production.
+
 ## License
 
 This app is licensed under the **GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)**.
