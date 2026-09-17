@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<info>
+    <id>e621tags</id>
+    <name>e621 Tags</name>
+    <summary>Automatically tag uploaded files using e621 metadata</summary>
+    <description>
+        Extracts e621 post IDs from filenames and imports their tags into Nextcloud.
+    </description>
+    <version>1.6.0</version>
+    <licence>AGPL-3.0-or-later</licence>
+    <author>Olde16</author>
+    <namespace>E621Tags</namespace>
+    <category>files</category>
+
+    <background-jobs>
+        <job>OCA\E621Tags\BulkScanJob</job>
+        <job>OCA\E621Tags\ApiDataUpdateJob</job>
+    </background-jobs>
+
+    <settings>
+        <admin>OCA\E621Tags\AdminSettings</admin>
+        <admin-section>OCA\E621Tags\AdminSection</admin-section>
+    </settings>
+</info>
