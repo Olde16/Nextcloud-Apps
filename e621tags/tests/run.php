@@ -8,12 +8,16 @@ declare(strict_types=1);
  * Each test is executed in its own PHP process so individual tests can
  * also be run directly and failures remain isolated.
  *
- * Run from the app directory with:
+ * Run all master tests from the app directory with:
  *
  *     php tests/run.php
+ *
+ * Run selected tests by passing their filenames, for example:
+ *
+ *     php tests/run.php filename_parser_test.php queue_test.php
  */
 
-$tests = [
+$availableTests = [
     'filename_parser_test.php',
     'e621_tag_parser_test.php',
     'e6ai_tag_parser_test.php',
@@ -25,6 +29,31 @@ $tests = [
     'db_refresh_test.php',
     'db_validation_test.php',
 ];
+
+$requestedTests = array_slice($argv, 1);
+
+if ($requestedTests === []) {
+    $tests = $availableTests;
+} else {
+    $tests = [];
+
+    foreach ($requestedTests as $requestedTest) {
+        if (!in_array($requestedTest, $availableTests, true)) {
+            echo "Unknown test: {$requestedTest}\n";
+            echo "Available tests:\n";
+
+            foreach ($availableTests as $availableTest) {
+                echo "  {$availableTest}\n";
+            }
+
+            exit(1);
+        }
+
+        if (!in_array($requestedTest, $tests, true)) {
+            $tests[] = $requestedTest;
+        }
+    }
+}
 
 $total = count($tests);
 $passed = 0;
