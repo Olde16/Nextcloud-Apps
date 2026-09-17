@@ -23,6 +23,16 @@ namespace OCA\E621Tags\Tests {
     {
         public bool $e621Enabled = true;
         public bool $e6aiEnabled = true;
+
+        public function isE621Enabled(): bool
+        {
+            return $this->e621Enabled;
+        }
+
+        public function isE6aiEnabled(): bool
+        {
+            return $this->e6aiEnabled;
+        }
     }
 
     class FakeJobList implements \OCP\BackgroundJob\IJobList
