@@ -24,6 +24,10 @@ namespace OCA\E621Tags\Tests {
         public bool $e621Enabled = true;
         public bool $e6aiEnabled = true;
 
+        public function __construct()
+        {
+        }
+
         public function isE621Enabled(): bool
         {
             return $this->e621Enabled;
@@ -85,6 +89,7 @@ namespace {
 
     echo "[PASS] Disabled e621 queueing\n";
 
+    $config->e6aiEnabled = true;
     $queue->addE6ai(201);
 
     if (
