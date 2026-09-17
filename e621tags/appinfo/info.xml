@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<info>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
     <id>e621tags</id>
     <name>e621 Tags</name>
     <summary>Automatically tag uploaded files using e621 metadata</summary>
@@ -11,6 +12,13 @@
     <author>Olde16</author>
     <namespace>E621Tags</namespace>
     <category>files</category>
+    <website>https://github.com/Olde16/Nextcloud-Apps/tree/main/e621tags</website>
+    <bugs>https://github.com/Olde16/Nextcloud-Apps/issues</bugs>
+    <repository>https://github.com/Olde16/Nextcloud-Apps</repository>
+
+    <dependencies>
+        <nextcloud min-version="34" max-version="34"/>
+    </dependencies>
 
     <background-jobs>
         <job>OCA\E621Tags\BulkScanJob</job>
