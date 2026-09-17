@@ -23,6 +23,14 @@ Nextcloud-Apps/
 
 Each app directory contains the complete Nextcloud app, including its `appinfo`, PHP classes, frontend assets, templates, and any app-specific documentation.
 
+## Disclaimer
+
+These apps are provided as open-source software and are used at your own risk. I do not provide any guarantee that they will work correctly in every environment or for every use case.
+
+I am not responsible for data loss, data corruption, service interruptions, security issues, or other damages resulting from the use, modification, configuration, or misuse of the software, to the extent permitted by applicable law.
+
+Please review changes, test new releases in your environment, and keep appropriate backups before using an app in production.
+
 ## License
 
 Unless a file or app states otherwise, the contents of this repository are licensed under the **GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)**.
