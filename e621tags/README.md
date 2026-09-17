@@ -48,10 +48,6 @@ The app provides an administration page for enabling or disabling e621 and e6AI 
 
 Processed files receive the marker tag `Tagged by e621TagSystem`.
 
-## Release and code review
-
-Before this app is published or released, the code is personally reviewed by the repository maintainer. Particular attention is given to the code itself before it is made publicly available.
-
 ## License
 
 This app is licensed under the **GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)**.
@@ -60,8 +56,4 @@ See the repository [LICENSE](../LICENSE) file for the full license text.
 
 ## AI assistance
 
-Parts of this app and its documentation have been created or refined with the assistance of AI tools. AI assistance is used as a development aid only. It does not replace the maintainer's own review of the code. Before publication or release, the code is personally reviewed by the repository maintainer, with particular attention to its quality and readiness for publication.
-
----
-
-*Built and maintained by Olde16.*
+AI tools may be used during development of this app and its documentation. Before anything is published, I personally review and test the code. Particular attention is given to code quality, security, and reliable operation.
