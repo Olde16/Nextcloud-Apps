@@ -81,6 +81,10 @@ namespace OCA\E621Tags {
         public bool $e6aiLore = true;
         public bool $e6aiMeta = true;
 
+        public function __construct()
+        {
+        }
+
         public function isNormalTagsEnabled(): bool
         {
             return $this->normalTagsEnabled;
@@ -180,7 +184,7 @@ namespace OCA\E621Tags {
 
 namespace {
     use OCA\E621Tags\FileTagUpdateJob;
-    use OCA\E621Tags\Tests\TestConfig;
+    use OCA\E621Tags\TestConfig;
 
     $config = new TestConfig();
     $job = (new ReflectionClass(FileTagUpdateJob::class))->newInstanceWithoutConstructor();
