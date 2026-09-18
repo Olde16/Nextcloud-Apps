@@ -1,0 +1,20 @@
+name: Deploy Nextcloud Apps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Nextcloud server
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: nextcloud-deploy
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            /var/nextclouddeploy/deploy.sh
