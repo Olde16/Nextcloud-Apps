@@ -39,6 +39,10 @@ namespace OCA\E621Tags\Tests {
         }
     }
 
+    class TestLogger implements \Psr\Log\LoggerInterface
+    {
+    }
+
     class FakeJobList implements \OCP\BackgroundJob\IJobList
     {
         /** @var list<array{jobClass: string, arguments: array<string, int>}> */
@@ -61,10 +65,11 @@ namespace {
     use OCA\E621Tags\Queue;
     use OCA\E621Tags\Tests\FakeJobList;
     use OCA\E621Tags\Tests\TestConfig;
+    use OCA\E621Tags\Tests\TestLogger;
 
     $jobs = new FakeJobList();
     $config = new TestConfig();
-    $queue = new Queue($jobs, $config);
+    $queue = new Queue($jobs, $config, new TestLogger());
 
     $queue->addE621(101);
 
