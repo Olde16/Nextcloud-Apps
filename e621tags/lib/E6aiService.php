@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace OCA\E621Tags;
 
 use OCP\Http\Client\IClientService;
+use Psr\Log\LoggerInterface;
 use RuntimeException;
 
 class E6aiService
@@ -16,6 +17,7 @@ class E6aiService
         private IClientService $clientService,
         private Config $config,
         private ApiRateLimiter $rateLimiter,
+        private LoggerInterface $logger,
     ) {
     }
 
@@ -44,6 +46,16 @@ class E6aiService
         $maxAttempts = 4;
 
         for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
+            $this->logger->info(
+                'e621Tags: requesting e6AI post ' .
+                $postId .
+                ' (attempt ' .
+                $attempt .
+                '/' .
+                $maxAttempts .
+                ')'
+            );
+
             $this->rateLimiter->wait('e6ai');
 
             $response = $client->get(
@@ -73,6 +85,14 @@ class E6aiService
                     $response->getHeader('Retry-After')
                 );
 
+                $this->logger->warning(
+                    'e621Tags: e6AI returned HTTP ' .
+                    $statusCode .
+                    ' for post ' .
+                    $postId .
+                    ', retrying'
+                );
+
                 $this->rateLimiter->backoff(
                     'e6ai',
                     $retryAfter
@@ -84,6 +104,13 @@ class E6aiService
             }
 
             if ($statusCode !== 200) {
+                $this->logger->warning(
+                    'e621Tags: e6AI returned HTTP ' .
+                    $statusCode .
+                    ' for post ' .
+                    $postId
+                );
+
                 throw new RuntimeException(
                     'e6AI returned HTTP ' .
                     $statusCode .
@@ -108,6 +135,10 @@ class E6aiService
                     'e6AI returned an unexpected response.'
                 );
             }
+
+            $this->logger->info(
+                'e621Tags: e6AI post ' . $postId . ' fetched successfully'
+            );
 
             return $data['post'];
         }
