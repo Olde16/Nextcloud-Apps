@@ -17,7 +17,7 @@
     <repository>https://github.com/Olde16/Nextcloud-Apps</repository>
 
     <dependencies>
-        <nextcloud min-version="34" max-version="34"/>
+        <nextcloud min-version="34"/>
     </dependencies>
 
     <background-jobs>
