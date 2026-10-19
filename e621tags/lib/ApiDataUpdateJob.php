@@ -12,7 +12,7 @@ use Psr\Log\LoggerInterface;
 class ApiDataUpdateJob extends TimedJob
 {
     private const INTERVAL = 7200;
-    private const MAX_POSTS_PER_RUN = 100;
+    private const MAX_POSTS_PER_RUN = 250;
 
     public function __construct(
         ITimeFactory $time,
