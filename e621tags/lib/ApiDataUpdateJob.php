@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
 
 class ApiDataUpdateJob extends TimedJob
 {
-    private const INTERVAL = 86400; // 24 Stunden
+    private const INTERVAL = 7200;
     private const MAX_POSTS_PER_RUN = 100;
 
     public function __construct(
