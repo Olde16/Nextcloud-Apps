@@ -17,7 +17,7 @@ use Psr\Log\LoggerInterface;
 
 class BulkScanJob extends TimedJob
 {
-    private const INTERVAL = 300; // 8 Min
+    private const INTERVAL = 299;
 
     private const E621_PATH =
         '/Gemeinsame Daten/Furry/Artwork/Unsortiert/TWS_DB';
