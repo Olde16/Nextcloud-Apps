@@ -27,9 +27,7 @@ class ApiDataUpdateJob extends TimedJob
 
         $this->setInterval(self::INTERVAL);
         $this->setAllowParallelRuns(false);
-        $this->setTimeSensitivity(
-            TimedJob::TIME_INSENSITIVE
-        );
+        $this->setTimeSensitivity(TimedJob::TIME_INSENSITIVE);
     }
 
     protected function run($arguments): void
