@@ -42,7 +42,7 @@ class BulkScanJob extends TimedJob
 
         $this->setInterval(self::INTERVAL);
         $this->setAllowParallelRuns(false);
-        $this->setTimeSensitivity(TimedJob::TIME_INSENSITIVE);
+        $this->setTimeSensitivity(TimedJob::TIME_SENSITIVE);
 
         $this->logger = Server::get(LoggerInterface::class);
         $this->rootFolder = Server::get(IRootFolder::class);
